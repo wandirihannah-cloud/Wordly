@@ -32,21 +32,20 @@ searchForm.addEventListener("submit", async function (event) {
 
     try {
         // Request dictionary information from the API
-        const response = await fetch(
-            `https://api.dictionaryapi.dev/api/v2/entries/en/${encodeURIComponent(word)}`
-        );
-
-        // Check whether the word was found
-        if (!response.ok) {
-            throw new Error("Word not found");
-        }
+        
 
         const data = await response.json();
         const wordData = data[0];
 
         // Display the searched word
         searchedWord.textContent = wordData.word;
+const response = await fetch(
+    `https://api.dictionaryapi.dev/api/v2/entries/en/${encodeURIComponent(word)}`
+);
 
+if (!response.ok) {
+    throw new Error("Word not found");
+}
         // Display pronunciation
         const phonetic = wordData.phonetics.find(
             item => item.text
