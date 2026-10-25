@@ -54,7 +54,7 @@ searchForm.addEventListener("submit", async function (event) {
 
         pronunciation.textContent = phonetic
             ? `Pronunciation: ${phonetic.text}`
-            : "Pronunciation is unavailable."
+            : "Pronunciation is unavailable.";
 
         // Display definitions
         const allSynonyms = new Set();
