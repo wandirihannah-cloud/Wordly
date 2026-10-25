@@ -33,19 +33,6 @@ searchForm.addEventListener("submit", async function (event) {
     try {
         // Request dictionary information from the API
         
-
-        const data = await response.json();
-        const wordData = data[0];
-
-        // Display the searched word
-        searchedWord.textContent = wordData.word;
-const response = await fetch(
-    `https://api.dictionaryapi.dev/api/v2/entries/en/${encodeURIComponent(word)}`
-);
-
-if (!response.ok) {
-    throw new Error("Word not found");
-}
         // Display pronunciation
         const phonetic = wordData.phonetics.find(
             item => item.text
@@ -58,7 +45,24 @@ if (!response.ok) {
         // Display definitions
         const allSynonyms = new Set();
 
-        wordData.meanings.forEach(function (meaning) {
+        wordData.m
+        // Request dictionary information from the API
+        const response = await fetch(
+            `https://api.dictionaryapi.dev/api/v2/entries/en/${encodeURIComponent(word)}`
+        );
+
+        // Check whether the word was found
+        if (!response.ok) {
+            throw new Error("Word not found");
+        }
+
+        // Convert the response into JavaScript data
+        const data = await response.json();
+        const wordData = data[0];
+
+        // Display the searched word
+        searchedWord.textContent = wordData.word;
+       wordData.meanings.forEach(function (meaning) {
             meaning.definitions.forEach(function (definition) {
                 const listItem = document.createElement("li");
 
