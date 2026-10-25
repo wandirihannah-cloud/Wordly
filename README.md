@@ -25,23 +25,10 @@ Wordly is a single-page dictionary application that allows users to search for E
 
 ## Project Structure
 
-```text
-wordly/
-├── index.html
-├── style.css
-├── index.js
-└── README.md
-```
-
-## How to Run the Project
-
-1. Clone or download the repository.
-2. Open the project folder in Visual Studio Code.
-3. Open `index.html` in your browser.
-4. Enter an English word in the search box.
-5. Click the Search button to view the results.
-
-An internet connection is required to retrieve dictionary data.
+index.html
+style.css
+index.js
+README.md
 
 ## API
 
@@ -55,4 +42,4 @@ This project demonstrates the use of semantic HTML, CSS styling, JavaScript even
 
 ## Author
 
-Created as a software engineering project.
+Hannah Wandiri
